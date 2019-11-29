@@ -1,0 +1,2 @@
+# dotzsh
+`.zprofile` と `.zshrc`
