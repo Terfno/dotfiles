@@ -1,5 +1,6 @@
 {
   "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
   "editor.fontSize": 16,
   "terminal.integrated.fontSize": 16,
   "workbench.iconTheme": "material-icon-theme",
@@ -13,8 +14,6 @@
     "editor.defaultFormatter": "ms-vscode.csharp"
   },
   "workbench.editor.showTabs": true,
-  // go env GOPATH
-  "go.gopath": "/Users/terfno/Documents/git/go",
   // auto fmt
   "editor.formatOnSave": true,
   "window.zoomLevel": 0,
@@ -31,7 +30,8 @@
     "*.tpl": "html",
     "*.tmpl": "html",
     "*.erb": "html.erb",
-    "*.toml": "toml"
+    "*.toml": "toml",
+    "Dockerfile-migrate": "dockerfile"
   },
   "html.format.endWithNewline": true,
   "html.format.indentInnerHtml": true,
@@ -50,11 +50,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // ruby
-  "ruby.intellisense": "rubyLocate",
-  "ruby.useLanguageServer": true,
-  "solargraph.definitions": true,
-  "solargraph.diagnostics": true,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
