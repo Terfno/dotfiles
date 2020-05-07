@@ -1,8 +1,8 @@
 {
   "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
-  "editor.fontSize": 16,
-  "terminal.integrated.fontSize": 16,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
   "workbench.iconTheme": "material-icon-theme",
   "editor.wordWrap": "on",
   "explorer.confirmDragAndDrop": false,
@@ -38,12 +38,11 @@
   "[htmltag]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "editor.fontFamily": "cica",
-  "editor.fontWeight": "500",
+  "editor.fontFamily": "jetbrains mono",
   "debug.console.fontSize": 16,
   "markdown.preview.fontSize": 16,
   "mssql.resultsFontSize": 16,
-  "terminal.integrated.fontFamily": "cica",
+  "terminal.integrated.fontFamily": "jetbrains mono",
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
@@ -67,5 +66,6 @@
   },
   "editor.renderControlCharacters": true,
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "japanese-proofreading.textlint.丸かっこ（）": false
+  "japanese-proofreading.textlint.丸かっこ（）": false,
+  "editor.fontWeight": "300"
 }
