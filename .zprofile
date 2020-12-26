@@ -1,30 +1,5 @@
 export PATH="/usr/local/sbin:$PATH"
 
-# nodenv
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# rbenv
-export PATH="~/.rbenv/shims:/usr/local/bin:$PATH"
-eval "$(rbenv init -)"
-
-export PATH="/usr/local/Cellar/git/2.5.0/bin:$PATH"
-
-# goenv
-export PATH="$HOME/.goenv/bin:$PATH"
-export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
-
-# golang
-export GOPATH=$HOME/Documents/git/go
-export PATH=$GOPATH/bin:$PATH
-export GOOGLE_APPLICATION_CREDENTIALS=$GOPATH/src/github.com/terfno/go_test/GAC.json
-
 # SYSKEN PROXY
 proxy_set(){
     export http_proxy="http://172.20.20.104:8080"

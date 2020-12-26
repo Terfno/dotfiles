@@ -1,71 +1,20 @@
 {
   "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
-  "editor.fontSize": 14,
-  "terminal.integrated.fontSize": 14,
   "workbench.iconTheme": "material-icon-theme",
   "editor.wordWrap": "on",
   "explorer.confirmDragAndDrop": false,
   "workbench.sideBar.location": "left",
   "workbench.activityBar.visible": true,
-  "python.jediEnabled": false,
   "explorer.confirmDelete": false,
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-vscode.csharp"
-  },
   "workbench.editor.showTabs": true,
-  // auto fmt
   "editor.formatOnSave": true,
   "window.zoomLevel": 0,
-  "[go]": {
-    "editor.defaultFormatter": "ms-vscode.Go"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "go.useLanguageServer": true,
   "editor.tabSize": 2,
-  "files.associations": {
-    "*.tag": "htmltag",
-    "*.tpl": "html",
-    "*.tmpl": "html",
-    "*.erb": "html.erb",
-    "*.toml": "toml",
-    "Dockerfile-migrate": "dockerfile"
-  },
-  "html.format.endWithNewline": true,
-  "html.format.indentInnerHtml": true,
-  "[htmltag]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "editor.fontFamily": "jetbrains mono",
-  "debug.console.fontSize": 16,
-  "markdown.preview.fontSize": 16,
-  "mssql.resultsFontSize": 16,
-  "terminal.integrated.fontFamily": "jetbrains mono",
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[ruby]": {
-    "editor.defaultFormatter": "rebornix.ruby"
-  },
-  "[html.erb]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "terminal.integrated.rendererType": "dom",
-  "C_Cpp.updateChannel": "Insiders",
-  "http.proxySupport": "off",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "terminal.integrated.fontFamily": "monospace",
   "editor.renderControlCharacters": true,
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "japanese-proofreading.textlint.丸かっこ（）": false,
-  "editor.fontWeight": "300"
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
