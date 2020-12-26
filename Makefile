@@ -9,6 +9,7 @@ xcode:
 
 brew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # zsh
 zshrc:
 	touch ~/.zshrc &&\
@@ -58,3 +59,25 @@ gpg:
 
 appcleaner:
 	brew install --cask appcleaner
+
+# lang
+re:
+	exec $SHELL -l
+
+anyenv:
+	brew install anyenv &&\
+	echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.zprofile &&\
+	anyenv init &&\
+	anyenv install --init
+
+goenv:
+	anyenv install goenv
+
+pyenv:
+	anyenv install pyenv
+
+rbenv:
+	anyenv install rbenv
+
+nodenv:
+	anyenv install nodenv
