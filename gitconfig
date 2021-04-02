@@ -1,0 +1,14 @@
+[core]
+	excludesfile = /Users/terfno/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
+	quotepath = false
+[commit]
+	template = /Users/terfno/.gitcommit-template
+[user]
+	name = terfno
+	email = sueda.takahito@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true

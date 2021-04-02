@@ -29,44 +29,45 @@ gitignore:
 
 gitcommit:
 	touch ~/.commit-template &&\
-	cat ./commit-template >> ~/.commit-template &&\
+	cat ./gitcommit-template >> ~/.commit-template &&\
 	git config --global commit.template ~/.commit-template
 
 # brews
 chrome:
-	brew install --cask google-chrome
+	brew install google-chrome
 
 ime:
-	brew isntall --cask google-japanese-ime
+	brew isntall google-japanese-ime
 
 vscode:
-	brew isntall --cask visual-studio-code
+	brew isntall visual-studio-code
 
 skim:
-	brew isntall --cask skim
+	brew isntall skim
 
 slack:
-	brew install --cask slack
+	brew install slack
 
 discord:
-	brew install --cask discord
+	brew install discord
 
 zoom:
-	brew install --cask zoomus
+	brew install zoom
 
 gpg:
-	brew install --cask gpg-suite
+	brew install gpg-suite
 
 appcleaner:
-	brew install --cask appcleaner
+	brew install appcleaner
 
 # lang
 re:
-	exec $SHELL -l
+	exec ${SHELL} -l
 
 anyenv:
 	brew install anyenv &&\
-	echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.zprofile &&\
+	echo 'export PATH="${HOME}/.anyenv/bin:${PATH}"' >> ~/.zprofile &&\
+	echo 'eval "$(anyenv init -)"' >> ~/.zprofile &&\
 	anyenv init &&\
 	anyenv install --init
 
