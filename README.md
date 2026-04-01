@@ -29,3 +29,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 wezterm copy (leader+c) は shell integration に依存。
 .zshrc に hook definitons として `OSC 133` を出すコードが入っている。
+
+依存している font
+- Cica
+- Nerd Font
