@@ -1,13 +1,19 @@
-# Temporary Files
-## vim
+# vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
 
-## Emacs
+# Emacs
 .\#*
+
+# vscode
+.vscode/
+*/.vscode/
+
+# JetBrains
+.idea/
 
 # Backup files
 *~
@@ -25,14 +31,14 @@ Session.vim
 
 # macOS dependent files
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 Thumbs.db
 
 # Bundler specific
 /vendor/bundle/
 /.bundle/
-# Office specific
-~$*
-*.tmp
 
 # Vagrant specific
 .vagrant/
@@ -42,3 +48,14 @@ node_modules/
 
 # Bower specific
 bower_components/
+
+# Claude
+CLAUDE.local.md
+**/.claude/settings.local.json
+
+# opencode
+.opencode/
+
+# Environment
+.env.local
+.env.*.local
