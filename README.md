@@ -33,3 +33,5 @@ wezterm copy (leader+c) は shell integration に依存。
 依存している font
 - Cica
 - Nerd Font
+
+デフォルトで XDG Base Directory を使うソフトウェアの files は `./xdg_config_home/*` へ
