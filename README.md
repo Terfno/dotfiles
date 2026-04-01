@@ -36,3 +36,8 @@ wezterm copy (leader+c) は shell integration に依存。
 
 デフォルトで XDG Base Directory を使うソフトウェアの files は `./xdg_config_home/*` へ
 XDG Base 風味かどうかはいったん https://wiki.archlinux.jp/index.php/XDG_Base_Directory を参照して考える。
+
+## gh
+`gh` の設定ファイルは `./xdg_config_home/gh/config.yml` で管理する。
+gh extensions は terfno/gh-exts で管理している。
+gh のセットアップと同時に `gh ext install terfno/gh-exts`→`gh exts install` で再現できる想定。
