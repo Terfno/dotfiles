@@ -35,3 +35,4 @@ wezterm copy (leader+c) は shell integration に依存。
 - Nerd Font
 
 デフォルトで XDG Base Directory を使うソフトウェアの files は `./xdg_config_home/*` へ
+XDG Base 風味かどうかはいったん https://wiki.archlinux.jp/index.php/XDG_Base_Directory を参照して考える。
