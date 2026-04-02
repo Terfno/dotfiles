@@ -2,9 +2,9 @@
 
 c.f. https://scrapbox.io/terfno/dotfiles
 
-```sh
-$ make init
-```
+`hard/*` には 特定の場所に置かないといけない dotfiles がある。具体的には `~/.zshrc` とか。
+`xdg_config_home/*` には XDG Base Directory に素直にしたがっていて、`~/.config/` に配置すれば良いものを置いている。たとえば `~/.config/gh/config.yml` とか。
+それ以外のファイルはこの dotfiles を管理するために必要なファイル類。
 
 ## zsh
 
