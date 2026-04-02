@@ -1,0 +1,16 @@
+{
+  "name": "dotfiles",
+  "volta": {
+    "node": "24.14.1"
+  },
+  "scripts": {
+    "prettier": "npx prettier --write '**/*.{json,yml,yaml,toml}'",
+    "stylua": "npx @johnnymorganz/stylua-bin --config-path ./stylua.toml ."
+  },
+  "devDependencies": {
+    "@johnnymorganz/stylua-bin": "^2.4.0",
+    "lefthook": "^2.1.4",
+    "prettier": "^3.8.1",
+    "prettier-plugin-toml": "^2.0.6"
+  }
+}

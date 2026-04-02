@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: "*.{json,yml,yaml,toml}"
+      run: npx prettier --check {staged_files}
+    stylua:
+      glob: "*.lua"
+      run: npx @johnnymorganz/stylua-bin --config-path ./stylua.toml --check {staged_files}

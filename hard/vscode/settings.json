@@ -1,9 +1,9 @@
 {
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode",
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[dockercompose]": {
     "editor.autoIndent": "advanced",
@@ -12,51 +12,51 @@
     "editor.quickSuggestions": {
       "comments": false,
       "other": true,
-      "strings": true,
+      "strings": true
     },
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[proto3]": {
-    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.defaultFormatter": "xaver.clang-format"
   },
   "[python]": {
-    "editor.formatOnType": true,
+    "editor.formatOnType": true
   },
   "[ruby]": {
-    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[yml]": {
-    "files.trimTrailingWhitespace": false,
+    "files.trimTrailingWhitespace": false
   },
   "chat.viewSessions.orientation": "stacked",
   "debug.console.fontFamily": "Cica",
@@ -84,7 +84,7 @@
   "files.associations": {
     "*.mdx": "markdown",
     "*.schema": "ruby",
-    "*.tt": "plaintext",
+    "*.tt": "plaintext"
   },
   "files.autoSave": "afterDelay",
   "files.trimTrailingWhitespace": true,
@@ -92,7 +92,7 @@
     "*": true,
     "markdown": true,
     "plaintext": true,
-    "scminput": false,
+    "scminput": false
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "japanese-proofreading.textlint.かっこ類と隣接する文字の間のスペースの有無": false,
@@ -104,7 +104,7 @@
     "https://json.schemastore.org/": true,
     "https://raw.githubusercontent.com/": true,
     "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true,
+    "https://www.schemastore.org/": true
   },
   "makefile.configureOnOpen": true,
   "markdown.preview.fontFamily": "Cica",
@@ -112,7 +112,7 @@
   "scm.inputFontFamily": "Cica",
   "screencastMode.keyboardOptions": {
     "showCommands": false,
-    "showKeys": false,
+    "showKeys": false
   },
   "sqldeveloper.datagrid.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
   "sqldeveloper.sqlHistory.historyLimit": 500,
@@ -126,5 +126,5 @@
   "workbench.colorTheme": "Dark Modern",
   "workbench.editor.showTabs": "multiple",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
+  "workbench.sideBar.location": "left"
 }
