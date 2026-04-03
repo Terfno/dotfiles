@@ -1,205 +1,289 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+format = """
+[╭─](bold overlay1) 🛸 \
+$directory\
+$git_branch\
+$git_status
+[│](bold overlay1)$time$cmd_duration$all$character"""
 
-[aws]
-symbol = " "
+[character]
+format = """
+[╰──$symbol](fg:overlay1) """
+success_symbol = '[](fg:bold text)'
+error_symbol = '[](fg:bold red)'
+
+[directory]
+disabled = false
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = '…/'
+format = "[$path/]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+disabled = false
+format = '\[[$symbol$branch]($style)\]'
+symbol = " "
+
+[git_status]
+disabled = false
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[time]
+disabled = false
+time_format = "%R"   # Hour:Minute Format
+format = '\[$time\]'
+
+[docker_context]
+disabled = true
 
 [buf]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [bun]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [c]
+disabled = false
+format = '\[[$symbol($version(-$name))]($style)\]'
 symbol = " "
 
-[cpp]
-symbol = " "
-
 [cmake]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
+[cmd_duration]
+disabled = false
+format = '\[[⏱ $duration]($style)\]'
+
+[cobol]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [conda]
+disabled = false
+format = '\[[$symbol$environment]($style)\]'
 symbol = " "
 
+[cpp]
+disabled = false
+format = '\[[$symbol($version(-$name))]($style)\]'
+symbol = " "
+
 [crystal]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
+[daml]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [dart]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [deno]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[directory]
-read_only = " 󰌾"
-
-[docker_context]
-symbol = " "
+[dotnet]
+disabled = false
+format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
 
 [elixir]
+disabled = false
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
 symbol = " "
 
 [elm]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
+[erlang]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [fennel]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [fortran]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[fossil_branch]
-symbol = " "
-
-[gcloud]
-symbol = " "
-
-[git_branch]
-symbol = " "
-
-[git_commit]
-tag_symbol = '  '
+[gleam]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 
 [golang]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [gradle]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[guix_shell]
-symbol = " "
-
 [haskell]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [haxe]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[hg_branch]
-symbol = " "
-
-[hostname]
-ssh_symbol = " "
+[helm]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 
 [java]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [julia]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [kotlin]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [lua]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[memory_usage]
-symbol = "󰍛 "
-
 [meson]
+disabled = false
+format = '\[[$symbol$project]($style)\]'
 symbol = "󰔷 "
 
+[mise]
+disabled = false
+format = '\[[$symbol$health]($style)\]'
+
+[mojo]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [nim]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = "󰆥 "
 
-[nix_shell]
-symbol = " "
-
 [nodejs]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [ocaml]
+disabled = false
+format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
 symbol = " "
 
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-AOSC = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Elementary = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Ios = "󰀷 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
-Zorin = " "
-
 [package]
+disabled = false
+format = '\[[$symbol$version]($style)\]'
 symbol = "󰏗 "
 
 [perl]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [php]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[pijul_channel]
-symbol = " "
-
 [pixi]
+disabled = false
+format = '\[[$symbol$version( $environment)]($style)\]'
 symbol = "󰏗 "
 
+[purescript]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [python]
+disabled = false
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 symbol = " "
 
+[quarto]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
+[raku]
+disabled = false
+format = '\[[$symbol($version-$vm_version)]($style)\]'
+
+[red]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [rlang]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = "󰟔 "
 
 [ruby]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [rust]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = "󱘗 "
 
 [scala]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
-[status]
-symbol = " "
+[solidity]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
+[spack]
+disabled = false
+format = '\[[$symbol$environment]($style)\]'
 
 [swift]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
+[typst]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
+[vlang]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
+
 [xmake]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 
 [zig]
+disabled = false
+format = '\[[$symbol($version)]($style)\]'
 symbol = " "
