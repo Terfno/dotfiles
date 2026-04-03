@@ -11,5 +11,11 @@ up:
 	npx lefthook install
 
 format:
+	make prettier
+	make stylua
+
+prettier:
 	npm run prettier
+
+stylua:
 	npm run stylua

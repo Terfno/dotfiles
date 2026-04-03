@@ -67,31 +67,6 @@ config.font_size = 15
 -- theme
 config.color_scheme = "Kanagawa (Gogh)"
 
--- keybinds
-config.leader = { key = ".", mods = "CTRL", timeout_milliseconds = 1000 }
-config.keys = {
-  -- ペイン移動
-  { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-  { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
-  { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-  { key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-
-  -- 分割
-  { key = "v", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-  { key = "s", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-
-  -- 閉じる
-  { key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
-  -- 直前のコマンドと出力をコピー
-  {
-    key = "c",
-    mods = "LEADER",
-    action = wezterm.action_callback(function(window, pane)
-      copy_last_command_with_output(window, pane)
-    end),
-  },
-}
-
 -- pane border (color_scheme から自動取得)
 local scheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
 local split_color = scheme.cursor_bg
@@ -101,6 +76,36 @@ config.inactive_pane_hsb = {
 }
 config.colors = {
   split = split_color,
+}
+
+-- ToggleFullScreen の挙動を macOS のネイティブなフルスクリーンにする
+config.native_macos_fullscreen_mode = true
+
+-- keybinds
+config.leader = { key = ".", mods = "CTRL", timeout_milliseconds = 1000 }
+config.keys = {
+  -- フルスクリーン切り替え, same as macOS native fullscreen toggle.
+  { key = "f", mods = "CMD|CTRL", action = act.ToggleFullScreen },
+
+  -- ペイン分割
+  { key = "v", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = "s", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  -- ペイン移動
+  { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+  { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+  { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+  { key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+  -- ペイン閉じる
+  { key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
+
+  -- 直前のコマンドと出力をコピー
+  {
+    key = "c",
+    mods = "LEADER",
+    action = wezterm.action_callback(function(window, pane)
+      copy_last_command_with_output(window, pane)
+    end),
+  },
 }
 
 -- Finally, return the configuration to wezterm:
