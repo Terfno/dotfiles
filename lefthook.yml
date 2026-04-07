@@ -1,9 +1,15 @@
 pre-commit:
   parallel: true
   commands:
+    jsonnetfmt:
+      glob: "**/*.{jsonnet,libsonnet}"
+      stage_fixed: true
+      run: jsonnetfmt -i {staged_files}
     prettier:
-      glob: "*.{json,yml,yaml,toml}"
-      run: npx prettier --check {staged_files}
+      glob: "**/*.{json,yml,yaml,toml}"
+      stage_fixed: true
+      run: npx prettier --write {staged_files}
     stylua:
-      glob: "*.lua"
-      run: npx @johnnymorganz/stylua-bin --config-path ./stylua.toml --check {staged_files}
+      glob: "**/*.lua"
+      stage_fixed: true
+      run: npx @johnnymorganz/stylua-bin --config-path ./stylua.toml {staged_files}
