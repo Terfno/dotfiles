@@ -1,4 +1,18 @@
-.PHONY: up format jsonnetfmt prettier stylua
+bootstrap:
+	@if command -v brew >/dev/null 2>&1; then \
+		echo "homebrew is ready"; \
+	else \
+		echo "installing homebrew"; \
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+	fi
+
+	bin/update && bin/bootstrap-mitamae
+
+dry-install:
+	bin/mitamae local ./recipes/default.rb --dry-run
+
+install:
+	bin/mitamae local ./recipes/default.rb
 
 up:
 	@if command -v brew >/dev/null 2>&1; then \

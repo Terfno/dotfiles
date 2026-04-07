@@ -18,6 +18,39 @@ dotfile '.zshrc' => 'zsh/.zshrc'
 # packages
 package 'git'
 package 'gh'
-package 'opencode'
+package 'fzf'
+package 'lsd'
 package 'starship'
-brew_cask 'wezterm'
+package 'opencode'
+
+# ## cask apps
+# brew_cask 'wezterm'
+# brew_cask 'visual-studio-code'
+# brew_cask 'karabiner-elements'
+
+# ### browsers
+# brew_cask 'arc'
+# brew_cask 'google-chrome'
+# brew_cask 'firefox'
+
+# ### others
+# brew_cask 'appcleaner'
+# brew_cask 'discord'
+# brew_cask 'spotify'
+# # brew_cask 'slack'
+# # brew_cask 'zoom'
+
+# opencode json build
+execute 'render opencode.json' do
+  command '../../config/opencode/render-config.sh'
+end
+
+# gh exts rebuild
+execute 'gh-exts rebuild' do
+  command 'gh ext install terfno/gh-exts'
+  command 'gh exts install -y'
+  user node[:user]
+
+  extslist = run_command('gh exts list')
+  puts " INFO : [gh-exts] installed extensions: #{extslist.stdout.strip}"
+end
