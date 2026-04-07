@@ -54,13 +54,17 @@ class GitHubRepository
 end
 
 repo = GitHubRepository.new('itamae-kitchen/mitamae')
-version       = repo.latest_version
-linux_shasum  = repo.latest_sha256_for('mitamae-x86_64-linux.tar.gz')
-darwin_shasum = repo.latest_sha256_for('mitamae-x86_64-darwin.tar.gz')
+version = repo.latest_version
+x86_64_linux_shasum = repo.latest_sha256_for('mitamae-x86_64-linux.tar.gz')
+aarch64_linux_shasum = repo.latest_sha256_for('mitamae-aarch64-linux.tar.gz')
+x86_64_darwin_shasum = repo.latest_sha256_for('mitamae-x86_64-darwin.tar.gz')
+aarch64_darwin_shasum = repo.latest_sha256_for('mitamae-aarch64-darwin.tar.gz')
 
 setup_file = "#{__dir__}/bootstrap-mitamae"
 source = File.read(setup_file)
-source.sub!(/^(mitamae_version=).+$/,       %(\\1"#{version}"))
-source.sub!(/^(mitamae_linux_sha256=).+$/,  %(\\1"#{linux_shasum}"))
-source.sub!(/^(mitamae_darwin_sha256=).+$/, %(\\1"#{darwin_shasum}"))
+source.sub!(/^(mitamae_version=).+$/, %(\\1"#{version}"))
+source.sub!(/^(mitamae_x86_64_linux_sha256=).+$/, %(\\1"#{x86_64_linux_shasum}"))
+source.sub!(/^(mitamae_aarch64_linux_sha256=).+$/, %(\\1"#{aarch64_linux_shasum}"))
+source.sub!(/^(mitamae_x86_64_darwin_sha256=).+$/, %(\\1"#{x86_64_darwin_shasum}"))
+source.sub!(/^(mitamae_aarch64_darwin_sha256=).+$/, %(\\1"#{aarch64_darwin_shasum}"))
 File.write(setup_file, source)
