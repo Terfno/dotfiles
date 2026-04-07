@@ -23,8 +23,9 @@ package 'lsd'
 package 'starship'
 package 'opencode'
 
-# ## cask apps
-# brew_cask 'wezterm'
+## cask apps
+brew_cask 'wezterm'
+
 # brew_cask 'visual-studio-code'
 # brew_cask 'karabiner-elements'
 
