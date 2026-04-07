@@ -1,54 +1,65 @@
 # verndor from: https://github.com/k0kubun/dotfiles/blob/bf7e5c3a456bad3824d8bbab1e61d8893070a2b0/recipes/base/default.rb
 # original license: MIT, https://github.com/k0kubun/dotfiles/blob/bf7e5c3a456bad3824d8bbab1e61d8893070a2b0/LICENSE.txt
 
-define :dotfile do
-  if params[:name].is_a?(String)
-    links = { params[:name] => params[:name] }
+LINKS = lambda do |name|
+  if name.is_a?(String)
+    { name => name }
   else
-    links = params[:name]
+    name
+  end
+end
+
+PREFIXED_LINKS = lambda do |prefix, name|
+  LINKS.call(name).transform_keys { |link_from| File.join(prefix, link_from) }
+end
+
+BACKUP_PATH = lambda do |path|
+  candidate = "#{path}.local"
+  suffix = 0
+
+  while File.exist?(candidate) || File.symlink?(candidate)
+    suffix += 1
+    candidate = "#{path}.local.#{suffix}"
   end
 
-  links.each do |link_from, link_to|
+  candidate
+end
+
+define :dotfile do
+  # create symbolic link from ~/link_from to dotfiles/config/link_to .
+  LINKS.call(params[:name]).each do |link_from, link_to|
     directory File.dirname(link_from = File.join(ENV['HOME'], link_from)) do
       user node[:user]
     end
 
+    File.rename(link_from, BACKUP_PATH.call(link_from)) if File.exist?(link_from) && !File.symlink?(link_from)
+
     link link_from do
-      to File.expand_path("../../../config/#{link_to}", __FILE__)
+      to File.expand_path("../../config/#{link_to}", __FILE__)
       user node[:user]
       force true
     end
   end
 end
 
-define :github_binary, version: nil, repository: nil, archive: nil, binary_path: nil do
-  cmd = params[:name]
-  bin_path = "#{ENV['HOME']}/bin/#{cmd}"
-  archive = params[:archive]
-  url = "https://github.com/#{params[:repository]}/releases/download/#{params[:version]}/#{archive}"
+define :xdg do
+  dotfile PREFIXED_LINKS.call('.config', params[:name])
+end
 
-  if archive.end_with?('.zip')
-    package 'unzip' do
-      not_if 'which unzip'
-    end
-    extract = "unzip -o"
-  elsif archive.end_with?('.tar.gz')
-    extract = "tar xvzf"
+define :brew_cask do
+  name = params[:name]
+
+  installed = run_command("brew list --cask '#{name}'", error: false).exit_status == 0
+
+  if installed
+    puts " INFO : [brew_cask] #{name} is already installed"
   else
-    raise "unexpected ext archive: #{archive}"
+    puts " INFO : [brew_cask] #{name} will be installed"
   end
 
-  directory "#{ENV['HOME']}/bin" do
-    owner node[:user]
-  end
-  execute "curl -fSL -o /tmp/#{archive} #{url}" do
-    not_if "test -f #{bin_path}"
-  end
-  execute "#{extract} /tmp/#{archive}" do
-    not_if "test -f #{bin_path}"
-    cwd "/tmp"
-  end
-  execute "mv /tmp/#{params[:binary_path] || cmd} #{bin_path} && chmod +x #{bin_path}" do
-    not_if "test -f #{bin_path}"
+  execute "install cask: #{name}" do
+    command "brew install --cask '#{name}'"
+    not_if  "brew list --cask '#{name}'"
+    user node[:user]
   end
 end
