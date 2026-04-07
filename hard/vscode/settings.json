@@ -98,14 +98,6 @@
   "japanese-proofreading.textlint.かっこ類と隣接する文字の間のスペースの有無": false,
   "japanese-proofreading.textlint.丸かっこ（）": false,
   "japanese-proofreading.textlint.全角文字と半角文字の間": false,
-  "json.schemaDownload.trustedDomains": {
-    "https://biomejs.dev": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://raw.githubusercontent.com/": true,
-    "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true
-  },
   "makefile.configureOnOpen": true,
   "markdown.preview.fontFamily": "Cica",
   "redhat.telemetry.enabled": true,
