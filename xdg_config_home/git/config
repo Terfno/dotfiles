@@ -14,3 +14,4 @@
 	ui = true
 [alias]
   qclone = clone --depth 1 --single-branch
+	fpush = push --force-with-lease
