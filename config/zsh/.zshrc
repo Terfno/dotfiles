@@ -5,6 +5,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 bindkey -e
 
+# Environment-local configurations
+if [[ -f ~/.zshrc.local ]]; then source ~/.zshrc.local; fi
+
 # 補完
 autoload -U compinit
 compinit
