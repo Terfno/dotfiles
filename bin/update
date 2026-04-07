@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # vendored from: https://github.com/k0kubun/dotfiles/blob/bf7e5c3a456bad3824d8bbab1e61d8893070a2b0/bin/update
 # original license: MIT, https://github.com/k0kubun/dotfiles/blob/bf7e5c3a456bad3824d8bbab1e61d8893070a2b0/LICENSE.txt
@@ -57,7 +58,7 @@ version       = repo.latest_version
 linux_shasum  = repo.latest_sha256_for('mitamae-x86_64-linux.tar.gz')
 darwin_shasum = repo.latest_sha256_for('mitamae-x86_64-darwin.tar.gz')
 
-setup_file = "#{__dir__}/setup"
+setup_file = "#{__dir__}/bootstrap-mitamae"
 source = File.read(setup_file)
 source.sub!(/^(mitamae_version=).+$/,       %(\\1"#{version}"))
 source.sub!(/^(mitamae_linux_sha256=).+$/,  %(\\1"#{linux_shasum}"))

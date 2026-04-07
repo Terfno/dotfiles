@@ -5,9 +5,9 @@
 
 set -e
 
-mitamae_version="1.14.1"
-mitamae_linux_sha256="dc5fe86e5a6ea46f8d1deedb812670871b9cd06547c7be456ebace73f83cbf7b"
-mitamae_darwin_sha256="eabb808469ee29e41c20de83966d8559604c7cec799475db0c98c379bd3e42aa"
+mitamae_version="1.14.4"
+mitamae_linux_sha256="a4b80eb74e796b453916dfff739c3eaa8d3d794244a0805a423b22292afa7165"
+mitamae_darwin_sha256="e55073f6da72d08ea2289431b5ed7951689bda7151a2a479c409b84454770de3"
 
 mitamae_cache="mitamae-${mitamae_version}"
 if ! [ -f "bin/${mitamae_cache}" ]; then
