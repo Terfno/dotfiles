@@ -20,6 +20,7 @@ package 'git'
 package 'gh'
 package 'fzf'
 package 'lsd'
+package 'jsonnet'
 package 'starship'
 package 'opencode'
 
