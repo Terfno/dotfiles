@@ -27,6 +27,7 @@ if [[ ${TERM_PROGRAM-} == "WezTerm" ]]; then
   autoload -Uz add-zsh-hook
 
   __wezterm_precmd() {
+    # Close the previous command, then mark the next prompt boundary.
     printf '\e]133;D;%s\e\\' "$?"
     printf '\e]133;A\e\\'
     printf '\e]7;file://%s%s\e\\' "$HOST" "$PWD"
@@ -36,8 +37,14 @@ if [[ ${TERM_PROGRAM-} == "WezTerm" ]]; then
     printf '\e]133;C\e\\'
   }
 
+  __wezterm_zle_line_init() {
+    printf '\e]133;B\e\\'
+  }
+
   add-zsh-hook precmd __wezterm_precmd
   add-zsh-hook preexec __wezterm_preexec
+  autoload -Uz add-zle-hook-widget
+  add-zle-hook-widget line-init __wezterm_zle_line_init
 fi
 
 # fzf
@@ -52,11 +59,6 @@ if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 else
   echo "starship not found, using default prompt"
-fi
-
-# insert OSC133 into prompt for hooks for wezterm integration
-if [[ ${TERM_PROGRAM-} == "WezTerm" ]]; then
-  PROMPT=$'%{\e]133;A\e\\\\%}'"$PROMPT"$'%{\e]133;B\e\\\\%}'
 fi
 
 # alias ls lsd
