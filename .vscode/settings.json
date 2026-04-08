@@ -1,0 +1,7 @@
+{
+  "json.schemaDownload.trustedDomains": {
+    "https://opencode.ai/tui.json": true,
+    "https://opencode.ai/config.json": true,
+    "https://models.dev/model-schema.json": true
+  }
+}

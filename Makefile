@@ -1,84 +1,55 @@
-init:
-	make xcode &&\
-	make brew &&\
-	make zshrc & make zprofile & make gitignore & make gitcommit &&\
-	make chrome & make ime & make vscode & make skim & make slack & make discord & make zoom & make gpg & make appcleaner
+bootstrap:
+	@if command -v brew >/dev/null 2>&1; then \
+		echo "homebrew is ready"; \
+	else \
+		echo "installing homebrew"; \
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+	fi
 
-xcode:
-	xcode-select --install
+	bin/update && bin/bootstrap-mitamae
 
-brew:
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+dry-install:
+	bin/mitamae local ./recipes/default.rb --dry-run
 
-# zsh
-zshrc:
-	touch ~/.zshrc &&\
-	cat ./.zshrc >> ~/.zshrc &&\
-	source ~/.zshrc
+install:
+	bin/mitamae local ./recipes/default.rb
 
-zprofile:
-	touch ~/.zprofile &&\
-	cat ./.zprofile >> ~/.zprofile &&\
-	source ~/.zprofile
+up:
+	@if command -v brew >/dev/null 2>&1; then \
+		echo "homebrew is ready"; \
+	else \
+		echo "installing homebrew"; \
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+	fi
 
-# git config
-gitignore:
-	touch ~/.gitignore-global &&\
-	cat ./gitignore-global >> ~/.gitignore-global &&\
-	git config --global core.excludesfile ~/.gitignore-global
+	brew install jsonnet
 
-gitcommit:
-	touch ~/.commit-template &&\
-	cat ./gitcommit-template >> ~/.commit-template &&\
-	git config --global commit.template ~/.commit-template
+	@if command -v volta >/dev/null 2>&1; then \
+		echo "volta is ready"; \
+	else \
+		echo "installing volta"; \
+		curl https://get.volta.sh | bash; \
+	fi
+	volta install node
 
-# brews
-chrome:
-	brew install google-chrome
+	npm i
+	npx lefthook install
 
-ime:
-	brew isntall google-japanese-ime
+format:
+	$(MAKE) prettier
+	$(MAKE) stylua
+	$(MAKE) jsonnetfmt
 
-vscode:
-	brew isntall visual-studio-code
+jsonnetfmt:
+	@files="$$(git ls-files '*.jsonnet' '*.libsonnet')"; \
+	if [ -z "$$files" ]; then \
+		echo "no jsonnet files"; \
+	else \
+		jsonnetfmt -i $$files; \
+	fi
 
-skim:
-	brew isntall skim
+prettier:
+	npm run prettier
 
-slack:
-	brew install slack
-
-discord:
-	brew install discord
-
-zoom:
-	brew install zoom
-
-gpg:
-	brew install gpg-suite
-
-appcleaner:
-	brew install appcleaner
-
-# lang
-re:
-	exec ${SHELL} -l
-
-anyenv:
-	brew install anyenv &&\
-	echo 'export PATH="${HOME}/.anyenv/bin:${PATH}"' >> ~/.zprofile &&\
-	echo 'eval "$(anyenv init -)"' >> ~/.zprofile &&\
-	anyenv init &&\
-	anyenv install --init
-
-goenv:
-	anyenv install goenv
-
-pyenv:
-	anyenv install pyenv
-
-rbenv:
-	anyenv install rbenv
-
-nodenv:
-	anyenv install nodenv
+stylua:
+	npm run stylua
