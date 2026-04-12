@@ -1,12 +1,7 @@
 bootstrap:
-	@if command -v brew >/dev/null 2>&1; then \
-		echo "homebrew is ready"; \
-	else \
-		echo "installing homebrew"; \
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
-	fi
-
-	bin/update && bin/bootstrap-mitamae
+	bin/update
+	bin/bootstrap-brew
+	bin/bootstrap-mitamae
 
 dry-install:
 	bin/mitamae local ./recipes/default.rb --dry-run
@@ -15,21 +10,10 @@ install:
 	bin/mitamae local ./recipes/default.rb
 
 up:
-	@if command -v brew >/dev/null 2>&1; then \
-		echo "homebrew is ready"; \
-	else \
-		echo "installing homebrew"; \
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
-	fi
-
+	bin/bootstrap-brew
 	brew install jsonnet
 
-	@if command -v volta >/dev/null 2>&1; then \
-		echo "volta is ready"; \
-	else \
-		echo "installing volta"; \
-		curl https://get.volta.sh | bash; \
-	fi
+	bin/bootstrap-volta
 	volta install node
 
 	npm i

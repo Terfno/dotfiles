@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if command -v brew >/dev/null 2>&1; then
+  echo "homebrew is ready";
+  brew -v
+else
+  echo "installing homebrew";
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+fi

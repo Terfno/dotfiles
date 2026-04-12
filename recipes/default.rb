@@ -16,16 +16,16 @@ xdg 'starship.toml' => 'starship/starship.toml'
 dotfile '.zshrc' => 'zsh/.zshrc'
 
 # packages
-package 'git'
-package 'gh'
-package 'fzf'
-package 'lsd'
-package 'jsonnet'
-package 'starship'
-package 'opencode'
+# package 'git'
+# package 'gh'
+# package 'fzf'
+# package 'lsd'
+# package 'jsonnet'
+# package 'starship'
+# package 'opencode'
 
 ## cask apps
-brew_cask 'wezterm'
+# brew_cask 'wezterm'
 
 # brew_cask 'visual-studio-code'
 # brew_cask 'karabiner-elements'
@@ -43,16 +43,16 @@ brew_cask 'wezterm'
 # # brew_cask 'zoom'
 
 # opencode json build
-execute 'render opencode.json' do
-  command '../../config/opencode/render-config.sh'
-end
+# execute 'render opencode.json' do
+#   command '../../config/opencode/render-config.sh'
+# end
 
 # gh exts rebuild
-execute 'gh-exts rebuild' do
-  command 'gh ext install terfno/gh-exts'
-  command 'gh exts install -y'
-  user node[:user]
+# execute 'gh-exts rebuild' do
+#   command 'gh ext install terfno/gh-exts'
+#   command 'gh exts install -y'
+#   user node[:user]
 
-  extslist = run_command('gh exts list')
-  puts " INFO : [gh-exts] installed extensions: #{extslist.stdout.strip}"
-end
+#   extslist = run_command('gh exts list')
+#   puts " INFO : [gh-exts] installed extensions: #{extslist.stdout.strip}"
+# end
