@@ -5,9 +5,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 bindkey -e
 
-# Environment-local configurations
-if [[ -f ~/.zshrc.local ]]; then source ~/.zshrc.local; fi
-
 # 補完
 autoload -U compinit
 compinit
@@ -81,3 +78,6 @@ fi
 ggrks(){
   open "https://www.google.co.jp/search?q=${*// /+}"
 }
+
+# Environment-local configurations
+if [[ -f ~/.zshrc.local ]]; then source ~/.zshrc.local; fi
