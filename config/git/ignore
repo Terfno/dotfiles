@@ -46,11 +46,15 @@ Thumbs.db
 # Node specific
 node_modules/
 
+# Ruby
+.foreman
+
 # Bower specific
 bower_components/
 
 # Claude
 CLAUDE.local.md
+state.md
 **/.claude/settings.local.json
 
 # opencode
@@ -59,3 +63,4 @@ CLAUDE.local.md
 # Environment
 .env.local
 .env.*.local
+.envrc
