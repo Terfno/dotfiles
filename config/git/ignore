@@ -54,7 +54,6 @@ bower_components/
 
 # Claude
 CLAUDE.local.md
-state.md
 **/.claude/settings.local.json
 
 # opencode

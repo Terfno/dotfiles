@@ -14,6 +14,7 @@ xdg 'starship.toml' => 'starship/starship.toml'
 
 # ~/.file style config
 dotfile '.zshrc' => 'zsh/.zshrc'
+dotfile '.claude/CLAUDE.md' => 'claude/CLAUDE.md'
 dotfile '.claude/settings.json' => 'claude/settings.json'
 dotfile '.claude/keybindings.json' => 'claude/keybindings.json'
 
