@@ -4,9 +4,11 @@ include_recipe 'helper'
 xdg 'git'
 xdg 'gh'
 xdg 'wezterm'
+xdg 'karabiner'
 
 ## partially managed config
 xdg 'opencode/opencode.json' => 'opencode/opencode.json'
+xdg 'rclone/rclone.conf' => 'rclone/rclone.conf'
 xdg 'opencode/tui.json' => 'opencode/tui.json'
 
 ## XDG_CONFIG_HOME ish config
