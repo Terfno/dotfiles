@@ -153,5 +153,7 @@ config.keys = {
   },
 }
 
+config.front_end = "OpenGL"
+
 -- Finally, return the configuration to wezterm:
 return config
