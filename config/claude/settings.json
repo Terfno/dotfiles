@@ -26,5 +26,6 @@
       "Read(./.env.*)",
       "Read(./secrets/**)"
     ]
-  }
+  },
+  "alwaysThinkingEnabled":true
 }
