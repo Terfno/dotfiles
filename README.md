@@ -61,3 +61,5 @@ gh のセットアップと同時に `gh ext install terfno/gh-exts`→`gh exts 
 この dotfiles を管理するために必要なツール類は `make up` で pre-commit まで設定される。
 `make format` で pre-commit 関係なくフォーマット実行できる。
 今は jsonnetfmt, prettier, stylua がある。
+
+Node.js は `mise.toml` で管理している。`make up` は mise と Node.js をセットアップしてから npm の依存関係をインストールする。

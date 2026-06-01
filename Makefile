@@ -13,11 +13,12 @@ up:
 	bin/bootstrap-brew
 	brew install jsonnet
 
-	bin/bootstrap-volta
-	volta install node
+	bin/bootstrap-mise
+	mise trust
+	mise install
 
-	npm i
-	npx lefthook install
+	mise exec -- npm i
+	mise exec -- npx lefthook install
 
 format:
 	$(MAKE) prettier
@@ -33,7 +34,7 @@ jsonnetfmt:
 	fi
 
 prettier:
-	npm run prettier
+	mise exec -- npm run prettier
 
 stylua:
-	npm run stylua
+	mise exec -- npm run stylua
