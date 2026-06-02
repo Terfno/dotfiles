@@ -1,0 +1,90 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": true,
+  "format_on_save": "off",
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "focus_follows_mouse": {
+    "enabled": false
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "title_bar": {
+    "show_branch_status_icon": true
+  },
+  "status_bar": {
+    "line_endings_button": false,
+    "show_active_file": true
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "terminal": {
+    "font_size": 16.0,
+    "font_family": "cica"
+  },
+  "base_keymap": "VSCode",
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show": true
+  },
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "buffer_font_family": "cica",
+  "file_types": {
+    "markdown": ["*.mdx"],
+    "erb": ["*.herb"],
+    "plaintext": ["*.tt"],
+    "ruby": ["*.schema"]
+  },
+  "show_whitespaces": "trailing",
+  "show_edit_predictions": true,
+  "soft_wrap": "editor_width",
+  "hard_tabs": false,
+  "tab_size": 2,
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark"
+  }
+}

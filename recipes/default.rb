@@ -5,6 +5,7 @@ xdg 'git'
 xdg 'gh'
 xdg 'wezterm'
 xdg 'karabiner'
+xdg 'zed'
 
 ## partially managed config
 xdg 'opencode/opencode.json' => 'opencode/opencode.json'
