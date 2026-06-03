@@ -9,13 +9,7 @@
                     "from": {
                         "key_code": "spacebar",
                         "modifiers": {
-                            "optional": [
-                                "caps_lock",
-                                "command",
-                                "control",
-                                "option",
-                                "fn"
-                            ]
+                            "optional": ["caps_lock", "fn"]
                         }
                     },
                     "to": [
@@ -37,13 +31,7 @@
                         "key_code": "spacebar",
                         "modifiers": {
                             "mandatory": ["shift"],
-                            "optional": [
-                                "caps_lock",
-                                "command",
-                                "control",
-                                "option",
-                                "fn"
-                            ]
+                            "optional": ["caps_lock", "fn"]
                         }
                     },
                     "to": [{ "key_code": "spacebar" }],
