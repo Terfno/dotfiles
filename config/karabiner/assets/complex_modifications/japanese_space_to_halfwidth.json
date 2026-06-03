@@ -1,0 +1,60 @@
+{
+    "title": "Japanese IME: swap Space and Shift+Space",
+    "rules": [
+        {
+            "description": "Japanese IME: Space = Shift+Space, Shift+Space = Space",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "optional": [
+                                "caps_lock",
+                                "command",
+                                "control",
+                                "option",
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": ["left_shift"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [{ "language": "ja" }]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "spacebar",
+                        "modifiers": {
+                            "mandatory": ["shift"],
+                            "optional": [
+                                "caps_lock",
+                                "command",
+                                "control",
+                                "option",
+                                "fn"
+                            ]
+                        }
+                    },
+                    "to": [{ "key_code": "spacebar" }],
+                    "conditions": [
+                        {
+                            "type": "input_source_if",
+                            "input_sources": [{ "language": "ja" }]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
