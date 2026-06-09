@@ -13,19 +13,20 @@
       "Bash(gh wt *)",
       "WebFetch(domain:example.com)"
     ],
-    "ask": [
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(rm:*)",
-      "Bash(npm run *)"
-    ],
     "deny": [
       "Bash(curl *)",
       "Bash(git push *)",
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
+    ],
+    "ask": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(rm:*)",
+      "Bash(npm run *)"
     ]
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "theme": "auto"
 }

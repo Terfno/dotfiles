@@ -15,6 +15,10 @@ fi
 
 brew install jsonnet
 
+if [[ ! -f ollama.libsonnet ]]; then
+  echo '{ models: {} }' > ollama.libsonnet
+fi
+
 if [[ -f ckpd.libsonnet ]]; then
   jsonnet -e "local base = import 'base.jsonnet'; local ckpd = import 'ckpd.libsonnet'; base { provider+: ckpd.provider }" > "$out"
 else

@@ -1,3 +1,5 @@
+local ollama = import 'ollama.libsonnet';
+
 {
   '$schema': 'https://opencode.ai/config.json',
   default_agent: 'plan',
@@ -8,13 +10,7 @@
       options: {
         baseURL: 'http://127.0.0.1:11434/v1',
       },
-      models: {
-        'gpt-oss:20b': {
-          name: 'gpt-oss:20b',
-          tool_call: true,
-          reasoning: true,
-        },
-      },
+      models: ollama.models,
     },
   },
 }

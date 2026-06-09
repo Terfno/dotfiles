@@ -1,3 +1,7 @@
+# temporary docs
+_temporary_docs/*
+AGENTS.override.md
+
 # vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
