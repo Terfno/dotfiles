@@ -2042,7 +2042,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "a" }],
-                    "to": [{ "key_code": "left_control" }]
+                    "to": [{ "key_code": "left_control", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2214,7 +2214,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "hyphen" }],
-                    "to": [{ "key_code": "right_control" }]
+                    "to": [{ "key_code": "right_control", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2232,7 +2232,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "z" }],
-                    "to": [{ "key_code": "left_shift" }]
+                    "to": [{ "key_code": "left_shift", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2250,7 +2250,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "x" }],
-                    "to": [{ "key_code": "left_option" }]
+                    "to": [{ "key_code": "left_option", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2268,7 +2268,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "c" }],
-                    "to": [{ "key_code": "left_command" }]
+                    "to": [{ "key_code": "left_command", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2370,7 +2370,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "m" }],
-                    "to": [{ "key_code": "right_command" }]
+                    "to": [{ "key_code": "right_command", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2388,7 +2388,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "comma" }],
-                    "to": [{ "key_code": "right_option" }]
+                    "to": [{ "key_code": "right_option", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2406,7 +2406,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "period" }],
-                    "to": [{ "key_code": "right_shift" }]
+                    "to": [{ "key_code": "right_shift", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2466,7 +2466,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "tab" }],
-                    "to": [{ "key_code": "left_command" }]
+                    "to": [{ "key_code": "left_command", "lazy": true }]
                 },
                 {
                     "type": "basic",
@@ -2536,7 +2536,7 @@
                         "basic.to_if_alone_timeout_milliseconds": 200
                     },
                     "to_if_alone": [{ "key_code": "delete_or_backspace" }],
-                    "to": [{ "key_code": "right_command" }]
+                    "to": [{ "key_code": "right_command", "lazy": true }]
                 },
                 {
                     "type": "basic",
