@@ -1,12 +1,7 @@
 bootstrap:
-	@if command -v brew >/dev/null 2>&1; then \
-		echo "homebrew is ready"; \
-	else \
-		echo "installing homebrew"; \
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
-	fi
-
-	bin/update && bin/bootstrap-mitamae
+	bin/update
+	bin/bootstrap-brew
+	bin/bootstrap-mitamae
 
 dry-install:
 	bin/mitamae local ./recipes/default.rb --dry-run
@@ -15,25 +10,15 @@ install:
 	bin/mitamae local ./recipes/default.rb
 
 up:
-	@if command -v brew >/dev/null 2>&1; then \
-		echo "homebrew is ready"; \
-	else \
-		echo "installing homebrew"; \
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
-	fi
-
+	bin/bootstrap-brew
 	brew install jsonnet
 
-	@if command -v volta >/dev/null 2>&1; then \
-		echo "volta is ready"; \
-	else \
-		echo "installing volta"; \
-		curl https://get.volta.sh | bash; \
-	fi
-	volta install node
+	bin/bootstrap-mise
+	mise trust
+	mise install
 
-	npm i
-	npx lefthook install
+	mise exec -- npm i
+	mise exec -- npx lefthook install
 
 format:
 	$(MAKE) prettier
@@ -49,7 +34,7 @@ jsonnetfmt:
 	fi
 
 prettier:
-	npm run prettier
+	mise exec -- npm run prettier
 
 stylua:
-	npm run stylua
+	mise exec -- npm run stylua

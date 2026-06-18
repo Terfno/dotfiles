@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if command -v uv >/dev/null 2>&1; then
+  echo "uv is ready"
+  uv --version
+else
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+fi

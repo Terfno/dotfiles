@@ -5,9 +5,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 bindkey -e
 
-# Environment-local configurations
-if [[ -f ~/.zshrc.local ]]; then source ~/.zshrc.local; fi
-
 # 補完
 autoload -U compinit
 compinit
@@ -81,3 +78,11 @@ fi
 ggrks(){
   open "https://www.google.co.jp/search?q=${*// /+}"
 }
+
+# mise
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+
+# Environment-local configurations
+if [[ -f ~/.zshrc.local ]]; then source ~/.zshrc.local; fi

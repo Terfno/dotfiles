@@ -1,3 +1,7 @@
+# temporary docs
+_temporary_docs/*
+AGENTS.override.md
+
 # vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
@@ -46,6 +50,9 @@ Thumbs.db
 # Node specific
 node_modules/
 
+# Ruby
+.foreman
+
 # Bower specific
 bower_components/
 
@@ -59,3 +66,4 @@ CLAUDE.local.md
 # Environment
 .env.local
 .env.*.local
+.envrc

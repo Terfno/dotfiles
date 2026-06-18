@@ -8,8 +8,8 @@ pre-commit:
     prettier:
       glob: "**/*.{json,yml,yaml,toml}"
       stage_fixed: true
-      run: npx prettier --write {staged_files}
+      run: mise exec -- npx prettier --write {staged_files}
     stylua:
       glob: "**/*.lua"
       stage_fixed: true
-      run: npx @johnnymorganz/stylua-bin --config-path ./stylua.toml {staged_files}
+      run: mise exec -- npx @johnnymorganz/stylua-bin --config-path ./stylua.toml {staged_files}
