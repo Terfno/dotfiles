@@ -1,0 +1,70 @@
+{
+    "title": "Home Row Mods Template by Leo",
+    "rules": [
+        {
+            "description": "a: shift, s: option, d: control, f: shift, by Leo_keeb",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 150,
+                        "basic.to_if_held_down_threshold_milliseconds": 150
+                    },
+                    "to_if_alone": {
+                        "halt": true,
+                        "key_code": "a"
+                    },
+                    "to_delayed_action": {
+                        "to_if_canceled": [
+                            {
+                                "key_code": "a"
+                            }
+                        ]
+                    },
+                    "to_if_held_down": {
+                        "halt": true,
+                        "key_code": "left_command"
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 150,
+                        "basic.to_if_held_down_threshold_milliseconds": 150
+                    },
+                    "to_if_alone": {
+                        "halt": true,
+                        "key_code": "s"
+                    },
+                    "to_delayed_action": {
+                        "to_if_canceled": [
+                            {
+                                "key_code": "s"
+                            }
+                        ]
+                    },
+                    "to_if_held_down": {
+                        "halt": true,
+                        "key_code": "left_option"
+                    }
+                }
+            ]
+        }
+    ]
+}
