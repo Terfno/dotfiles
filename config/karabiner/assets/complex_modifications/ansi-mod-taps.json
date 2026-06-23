@@ -12,6 +12,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "japanese_eisuu"
@@ -36,6 +46,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "japanese_kana"
@@ -60,6 +80,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "a"
@@ -84,6 +114,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "semicolon"
@@ -108,6 +148,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "z"
@@ -132,6 +182,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "slash"
@@ -156,6 +216,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "x"
@@ -180,6 +250,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "period"
@@ -204,6 +284,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "c"
@@ -228,6 +318,16 @@
                             "optional": ["any"]
                         }
                     },
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
                     "to_if_alone": {
                         "halt": true,
                         "key_code": "comma"
