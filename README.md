@@ -10,6 +10,11 @@
 - apply: `make install`
 - apply with dry-run: `make dry-install`
 
+## Codex skills
+
+Codex skills are managed under `config/codex/skills/` and linked to `~/.codex/skills/` by mitamae.
+`config/codex/skills/.system/` is intentionally ignored because it is owned by Codex.
+
 ## todo
 
 ```
