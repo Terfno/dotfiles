@@ -107,6 +107,10 @@
   "languages": {
     "Ruby": {
       "language_servers": ["ruby-lsp"]
+    },
+    "Python": {
+      "tab_size": 4,
+      "hard_tabs": false
     }
   }
 }
