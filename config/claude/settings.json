@@ -1,5 +1,25 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash '/Users/terfno/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
+  "model": "claude-fable-5[1m]",
   "permissions": {
     "allow": [
       "Read(~/**)",
@@ -11,7 +31,43 @@
       "Bash(npm run test *)",
       "Bash(* --version)",
       "Bash(gh wt *)",
-      "WebFetch(domain:example.com)"
+      "Bash(gh pr view:*)",
+      "Bash(uv sync *)",
+      "Bash(uv run test)",
+      "Bash(uv run test *)",
+      "Bash(uv run ruff format)",
+      "Bash(uv run ruff format *)",
+      "mcp__claude_ai_Linear__get_*",
+      "mcp__claude_ai_Linear__list_*",
+      "mcp__claude_ai_Linear__search_*",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-get-*",
+      "mcp__claude_ai_Notion__notion-query-*",
+      "mcp__claude_ai_Notion__notion-download-attachment",
+      "mcp__claude_ai_Slack__slack_read_*",
+      "mcp__claude_ai_Slack__slack_search_*",
+      "mcp__claude_ai_Slack__slack_get_*",
+      "mcp__claude_ai_Slack__slack_list_*",
+      "mcp__claude_ai_Sentry__find_*",
+      "mcp__claude_ai_Sentry__search_*",
+      "mcp__claude_ai_Sentry__get_*",
+      "mcp__claude_ai_Datadog__get_*",
+      "mcp__claude_ai_Datadog__get-*",
+      "mcp__claude_ai_Datadog__search_*",
+      "mcp__claude_ai_Datadog__list_*",
+      "mcp__claude_ai_Datadog__list-*",
+      "mcp__claude_ai_Datadog__analyze_*",
+      "mcp__claude_ai_Datadog__aggregate_*",
+      "mcp__claude_ai_Datadog__explore_*",
+      "mcp__claude_ai_Datadog__find_*",
+      "mcp__claude_ai_Datadog__read_*"
+    ],
+    "ask": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(rm:*)",
+      "Bash(npm run *)"
     ],
     "deny": [
       "Bash(curl *)",
@@ -19,14 +75,15 @@
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
-    ],
-    "ask": [
-      "Bash(git add *)",
-      "Bash(git commit *)",
-      "Bash(rm:*)",
-      "Bash(npm run *)"
     ]
   },
-  "alwaysThinkingEnabled": true,
+  "statusLine": {
+    "command": "bash ~/.claude/statusline-command.sh",
+    "type": "command"
+  },
+  "subagentStatusLine": {
+    "command": "bash ~/.claude/subagent-statusline.sh",
+    "type": "command"
+  },
   "theme": "auto"
 }

@@ -33,6 +33,7 @@
 - `git push --force` は使わない。代わりに `git fpush` を確認してから使う。
 - 作業は feature branch。`main` / `master` で直接作業しない
   - 操作しようとしたら確認する。
+- PR は常に draft で作成する（`gh pr create --draft`）
 
 ## 危険操作
 
@@ -49,6 +50,47 @@
 - シェル操作より専用ツール（Read/Edit/Grep/Glob）を優先
 - 長い作業は適宜 TaskCreate で分解
 - 広い探索は Agent(Explore)、一点検索は Grep / Glob
+
+## herdr（ターミナル/エージェント multiplexer）
+
+herdr は AI コーディングエージェント専用の multiplexer（tmux のエージェント版）。
+セッション内で動いているなら、**他ペイン・他エージェントの状態を能動的に観測して連携する**。
+
+`herdr pane list` が成功する＝herdr 内。エラーなら未使用なので無視してよい。
+
+### 観測（積極的に使う）
+
+- `herdr pane list` / `herdr api snapshot` — 全ペインの一覧。agent 種別・状態（`idle`/`working`/`blocked`/`done`/`unknown`）・cwd がわかる
+- `herdr pane read <pane_id>` / `herdr agent read <target>` — ペインの中身を読む。`--source visible|recent|recent-unwrapped` `--lines N` `--format text|ansi`
+- `herdr agent list` / `herdr agent get <target>` / `herdr agent explain <target>` — エージェント単位の状態確認
+- target は terminal id・agent 名・ラベル・pane id を受け付ける
+
+活用例:
+- 「隣（別ペイン）のエージェントが何で詰まってるか見て」→ 該当ペインを `read` して答える
+- 他エージェントに作業を任せている間、`list` で状態を見て進捗を把握する
+- blocked のペインがあれば気づいて知らせる
+
+### 待機
+
+- `herdr wait agent-status <pane_id> --status idle [--timeout MS]` — 他エージェントの完了待ち
+- `herdr wait output <pane_id> --match <text> [--regex] [--timeout MS]` — 特定出力が出るまで待つ
+
+### 通知
+
+- `herdr notification show <title> [--body TEXT] [--sound none|done|request]` — 長い作業の完了・要確認をユーザーに通知（別ペインで作業中のユーザーに気づいてもらえる）
+
+### 送信・実行（副作用あり・依頼時のみ、確認してから）
+
+- `herdr pane send-text <id> <text>` / `herdr agent send <target> <text>` — 入力を送る（literal、Enter なし）
+- `herdr pane send-keys <id> <key ...>` — キー送信
+- `herdr pane run <id> <command>` — コマンド＋Enter を送って実行
+- 他ペインへの入力は他エージェントの作業に割り込むので、明示的に依頼された時だけ・確認してから
+
+### 管理系
+
+- workspace / tab / worktree / session に list・create・focus・rename・close 等（`herdr <名> --help` 参照）
+- `herdr agent start <name> ... -- <argv>` で新規エージェント起動、`herdr worktree create` で git worktree 分離
+- 全 API は `herdr api schema --json` で参照可能
 
 ## やらないでほしいこと
 
