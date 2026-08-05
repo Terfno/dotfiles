@@ -7,11 +7,13 @@ xdg 'wezterm'
 xdg 'karabiner'
 xdg 'zed'
 xdg 'swiftbar'
+xdg 'ecsta'
 
 ## partially managed config
 xdg 'opencode/opencode.json' => 'opencode/opencode.json'
 xdg 'rclone/rclone.conf' => 'rclone/rclone.conf'
 xdg 'opencode/tui.json' => 'opencode/tui.json'
+xdg 'herdr/config.toml' => 'herdr/config.toml' # config.toml のみ管理（他はログ/ソケット等のランタイム）
 
 ## XDG_CONFIG_HOME ish config
 xdg 'starship.toml' => 'starship/starship.toml'
@@ -21,6 +23,8 @@ dotfile '.zshrc' => 'zsh/.zshrc'
 dotfile '.claude/CLAUDE.md' => 'claude/CLAUDE.md'
 dotfile '.claude/settings.json' => 'claude/settings.json'
 dotfile '.claude/keybindings.json' => 'claude/keybindings.json'
+dotfile '.claude/statusline-command.sh' => 'claude/statusline-command.sh'
+dotfile '.claude/subagent-statusline.sh' => 'claude/subagent-statusline.sh'
 dotfile '.codex/skills' => 'codex/skills'
 
 # packages
