@@ -84,5 +84,9 @@ if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
 fi
 
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/terfno/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
 # Environment-local configurations
 if [[ -f ~/.zshrc.local ]]; then source ~/.zshrc.local; fi
