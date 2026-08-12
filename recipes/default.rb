@@ -25,6 +25,7 @@ dotfile '.claude/settings.json' => 'claude/settings.json'
 dotfile '.claude/keybindings.json' => 'claude/keybindings.json'
 dotfile '.claude/statusline-command.sh' => 'claude/statusline-command.sh'
 dotfile '.claude/subagent-statusline.sh' => 'claude/subagent-statusline.sh'
+dotfile '.claude/skills' => 'claude/skills'
 dotfile '.codex/skills' => 'codex/skills'
 
 # packages
