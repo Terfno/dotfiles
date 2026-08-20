@@ -12,6 +12,7 @@
 
 ## Codex skills
 
+Codex のグローバル指示は `config/codex/AGENTS.md` で管理し、`~/.codex/AGENTS.md` に mitamae でリンクする。
 Codex skills are managed under `config/codex/skills/` and linked to `~/.codex/skills/` by mitamae.
 `config/codex/skills/.system/` is intentionally ignored because it is owned by Codex.
 
