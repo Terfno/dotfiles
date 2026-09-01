@@ -1,0 +1,7 @@
+onboarding = false
+[keys]
+prefix = "ctrl+comma"
+
+[ui]
+accent = "#ff79c6"
+agent_panel_sort = "spaces"
