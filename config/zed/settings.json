@@ -50,9 +50,10 @@
   "agent_servers": {
     "claude-acp": {
       "default_config_options": {
+        "effort": "medium",
         "mode": "auto",
         "fast": "on",
-        "model": "sonnet"
+        "model": "claude-fable-5[1m]"
       },
       "type": "registry"
     },
