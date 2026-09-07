@@ -62,6 +62,7 @@
 - シェル操作より専用ツール（Read/Edit/Grep/Glob）を優先
 - 長い作業は適宜 TaskCreate で分解
 - 広い探索は Agent(Explore)、一点検索は Grep / Glob
+- AskUserQuestion は使わない。確認や質問が必要なときは通常のテキストで聞く
 
 ## herdr（ターミナル/エージェント multiplexer）
 
