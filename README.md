@@ -10,6 +10,13 @@
 - apply: `make install`
 - apply with dry-run: `make dry-install`
 
+### Codex skills
+
+`track-purchase-matcher` は private submodule です。GitHub SSH 認証を設定してから
+`git submodule update --init` を実行し、その後 `make install` で
+`config/codex/skills/` を `~/.codex/skills/` に配置します。
+更新時は submodule の参照コミットを明示的に変更します。
+
 ## todo
 
 ```
