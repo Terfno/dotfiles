@@ -1,0 +1,3 @@
+[submodule "config/codex/skills/track-purchase-matcher"]
+	path = config/codex/skills/track-purchase-matcher
+	url = git@github.com:Terfno/track-purchase-matcher-skill.git

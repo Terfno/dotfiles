@@ -17,6 +17,11 @@ Codex の設定は `config/codex/config.toml` で管理し、`~/.codex/config.to
 Codex skills are managed under `config/codex/skills/` and linked to `~/.codex/skills/` by mitamae.
 `config/codex/skills/.system/` is intentionally ignored because it is owned by Codex.
 
+`track-purchase-matcher` は private submodule です。GitHub SSH 認証を設定してから
+`git submodule update --init` を実行し、その後 `make install` で
+`config/codex/skills/` を `~/.codex/skills/` に配置します。
+更新時は submodule の参照コミットを明示的に変更します。
+
 ## todo
 
 ```
