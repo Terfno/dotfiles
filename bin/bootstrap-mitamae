@@ -5,11 +5,11 @@
 
 set -e
 
-mitamae_version="1.14.4"
-mitamae_x86_64_linux_sha256="a4b80eb74e796b453916dfff739c3eaa8d3d794244a0805a423b22292afa7165"
-mitamae_aarch64_linux_sha256="e84f7b00070c6fc64b8fd0242182d4913180764dea699be4adda2cfa2e8d0683"
-mitamae_x86_64_darwin_sha256="e55073f6da72d08ea2289431b5ed7951689bda7151a2a479c409b84454770de3"
-mitamae_aarch64_darwin_sha256="db5b2d3ac75e444dfb12aaa1b1074cc820f234b1071bfa08d7328b26d9bcde0f"
+mitamae_version="2.0.0"
+mitamae_x86_64_linux_sha256="e63821869c787c85c43ae0ebb7e5dec2c1bc00d4ea8efce272d646080e6baa97"
+mitamae_aarch64_linux_sha256="21c5d27efc5f2858cfe8dd180a50b75ff80546d851e579cd7ad9c623b3767c42"
+mitamae_x86_64_darwin_sha256="5074baba52a3ae3855f6b7711735f8004db2b2b6de3ddf346d6c34ed542256a7"
+mitamae_aarch64_darwin_sha256="090c6a4499235d79191632188c70846de93a7e2c77f9077ef61b530149209218"
 
 case "$(uname)-$(uname -m)" in
   "Linux-x86_64")
@@ -36,16 +36,13 @@ esac
 
 mitamae_cache="mitamae-${mitamae_version}-$(uname)-$(uname -m)"
 if ! [ -f "bin/${mitamae_cache}" ]; then
-  curl -o "bin/${mitamae_bin}.tar.gz" -fL "https://github.com/itamae-kitchen/mitamae/releases/download/v${mitamae_version}/${mitamae_bin}.tar.gz"
-  sha256="$(/usr/bin/openssl dgst -sha256 "bin/${mitamae_bin}.tar.gz" | cut -d" " -f2)"
+  curl -o "bin/${mitamae_cache}" -fL "https://github.com/itamae-kitchen/mitamae/releases/download/v${mitamae_version}/${mitamae_bin}"
+  sha256="$(/usr/bin/openssl dgst -sha256 "bin/${mitamae_cache}" | cut -d" " -f2)"
   if [ "$mitamae_sha256" != "$sha256" ]; then
     echo "checksum verification failed!\nexpected: ${mitamae_sha256}\n  actual: ${sha256}"
+    rm "bin/${mitamae_cache}"
     exit 1
   fi
-  tar xvzf "bin/${mitamae_bin}.tar.gz"
-
-  rm "bin/${mitamae_bin}.tar.gz"
-  mv "${mitamae_bin}" "bin/${mitamae_cache}"
   chmod +x "bin/${mitamae_cache}"
 fi
 ln -sf "${mitamae_cache}" bin/mitamae

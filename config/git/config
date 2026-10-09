@@ -1,12 +1,14 @@
 [user]
 	name = terfno
 	email = sueda.takahito@gmail.com
+	signingkey = 4EB59B1993B94966
 [core]
 	excludesfile = ~/.config/git/ignore
 	editor = vim -c \"set fenc=utf-8\"
 	quotepath = false
 [commit]
   template = ~/.config/git/commit-template
+	gpgsign = true
 [color]
 	diff = auto
 	status = auto

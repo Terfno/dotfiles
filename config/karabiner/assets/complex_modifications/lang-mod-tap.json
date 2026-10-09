@@ -1,0 +1,66 @@
+{
+    "title": "tap:eisu/kana, hold:cmd",
+    "rules": [
+        {
+            "description": "JIS lang keys mod-tap: eisuu/kana hold command",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_eisuu",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 150,
+                        "basic.to_if_held_down_threshold_milliseconds": 150
+                    },
+                    "to_if_alone": {
+                        "halt": true,
+                        "key_code": "japanese_eisuu"
+                    },
+                    "to_delayed_action": {
+                        "to_if_canceled": [
+                            {
+                                "key_code": "japanese_eisuu"
+                            }
+                        ]
+                    },
+                    "to_if_held_down": {
+                        "halt": true,
+                        "key_code": "left_command"
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_kana",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 150,
+                        "basic.to_if_held_down_threshold_milliseconds": 150
+                    },
+                    "to_if_alone": {
+                        "halt": true,
+                        "key_code": "japanese_kana"
+                    },
+                    "to_delayed_action": {
+                        "to_if_canceled": [
+                            {
+                                "key_code": "japanese_kana"
+                            }
+                        ]
+                    },
+                    "to_if_held_down": {
+                        "halt": true,
+                        "key_code": "right_command"
+                    }
+                }
+            ]
+        }
+    ]
+}
