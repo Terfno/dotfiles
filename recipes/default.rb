@@ -28,6 +28,7 @@ dotfile '.claude/subagent-statusline.sh' => 'claude/subagent-statusline.sh'
 dotfile '.claude/skills' => 'claude/skills'
 dotfile '.codex/AGENTS.md' => 'codex/AGENTS.md'
 dotfile '.codex/config.toml' => 'codex/config.toml'
+dotfile '.config/delta/AGENT.md' => 'delta/AGENT.md'
 dotfile '.codex/skills' => 'codex/skills'
 
 # packages
