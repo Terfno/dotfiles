@@ -51,6 +51,9 @@
 - 検証結果、未検証事項、依存関係、単独マージ可否を記載する。
 - bold / italic / underline は使わない。コード span は使用可。
 - issue tracker を操作できなくても、渡された issue URL を本文に含める。
+- 元リポジトリが `~/dev/privat/` 配下にある場合、PR description に作業した Delta thread の URL を記載する。Delta の管理 worktree で作業していても、判定には元リポジトリの場所を使う。
+- URL は実際に取得できたものを使い、推測で生成しない。取得できない場合はユーザーに確認する。
+- URL の記載のために thread の共有範囲を勝手に変更しない。
 
 ## 承認が必要な操作
 
