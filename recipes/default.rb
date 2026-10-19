@@ -23,6 +23,7 @@ dotfile '.claude/CLAUDE.md' => 'claude/CLAUDE.md'
 dotfile '.claude/settings.json' => 'claude/settings.json'
 dotfile '.claude/keybindings.json' => 'claude/keybindings.json'
 dotfile '.config/delta/AGENT.md' => 'delta/AGENT.md'
+dotfile '.codex/AGENTS.md' => 'codex/AGENTS.md'
 dotfile '.codex/skills' => 'codex/skills'
 
 # packages
