@@ -10,6 +10,14 @@
 - apply: `make install`
 - apply with dry-run: `make dry-install`
 
+### Codex instructions
+
+Codex の共通指示は `config/codex/AGENTS.md` で管理します。
+`make install` で `~/.codex/AGENTS.md` へのシンボリックリンクを作成します。
+既存の通常ファイルは `~/.codex/AGENTS.md.local` に退避します
+（同名が存在する場合は `.local.1`、`.local.2` …）。
+共通指示の変更は `config/codex/AGENTS.md` を編集してください。
+
 ### Codex skills
 
 `track-purchase-matcher` は private submodule です。GitHub SSH 認証を設定してから
