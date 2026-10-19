@@ -1,0 +1,157 @@
+model = "gpt-5.6-luna"
+model_reasoning_effort = "low"
+approvals_reviewer = "auto_review"
+notify = [
+  "/Users/terfno/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+  "turn-ended",
+]
+service_tier = "default"
+
+[projects."/Users/terfno/dev/privat/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/Downloads/333_takahito_sueda_terfno"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/dev/privat/terfno.github.io"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/dev/privat/pem"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/Documents/Codex/2026-08-18/use-the-available-google-calendar-integration"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/dev/privat"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/dev/privat/LFU-web"]
+trust_level = "trusted"
+
+[projects."/Users/terfno/dev/privat/tc-web"]
+trust_level = "trusted"
+
+[tui]
+status_line = [
+  "model-with-reasoning",
+  "current-dir",
+  "approval-mode",
+  "five-hour-limit",
+  "weekly-limit",
+]
+status_line_use_colors = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 1
+
+[features]
+hooks = true
+js_repl = false
+memories = true
+rmcp_client = true
+
+[hooks.state]
+
+[hooks.state."/Users/terfno/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:a6a78d8ef443f2b9ccad4083a315ffc80bfab5399c05001ad6cd5d95853a5cd7"
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = "/Users/terfno/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = "/Users/terfno/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[mcp_servers.node_repl]
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120.0
+
+[mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.825.51511"
+BROWSER_USE_TINYSKY_ENABLED = "0"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+CODEX_HOME = "/Users/terfno/.codex"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/terfno/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/terfno/.codex/plugins/cache/openai-bundled/browser/26.825.51511/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[mcp_servers.cua_repl]
+command = "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
+enabled = false
+
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"
+
+[shell_environment_policy.set]
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"
+
+[desktop]
+conversationDetailMode = "STEPS_PROSE"
+ambient-suggestions-enabled = true
+localeOverride = "ja-JP"
+mac-menu-bar-enabled = false
+defaultTerminalLocation = "right"
+preventSleepWhileRunning = true
+show-context-window-usage = true
+hotkey-window-projectless-default-enabled = true
+usePointerCursors = false
+dock-icon-preference = "codex-system"
+appearanceDiffMarkerStyle = "color"
+followUpQueueMode = "queue"
+open-local-url-in-target-preference = "external-browser"
+open-link-in-target-preference = "external-browser"
+
+[desktop.open-in-target-preferences]
+global = "zed"
+
+[memories]
+generate_memories = true
+use_memories = true

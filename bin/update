@@ -5,6 +5,7 @@
 # original license: MIT, https://github.com/k0kubun/dotfiles/blob/bf7e5c3a456bad3824d8bbab1e61d8893070a2b0/LICENSE.txt
 
 require 'net/http'
+require 'json'
 require 'shellwords'
 require 'fileutils'
 
@@ -16,49 +17,58 @@ class GitHubRepository
 
   # @return [String] - "1.2.3"
   def latest_version
-    @latest_version ||= fetch_latest_version
+    @latest_version ||= latest_release.fetch('tag_name').sub(/\Av/, '')
   end
 
-  def latest_sha256_for(binary_name)
-    temp_path = "/tmp/#{binary_name}"
-    unless system(['curl', '-o', temp_path, '-fL', "https://github.com/#{@full_name}/releases/download/v#{latest_version}/#{binary_name}"].shelljoin)
-      raise "Failed to fetch binary: #{binary_name}"
+  def latest_sha256_for(asset_name)
+    temp_path = nil
+    asset = latest_release.fetch('assets').find { |a| a.fetch('name') == asset_name }
+    raise "Failed to find asset: #{asset_name}" if asset.nil?
+
+    digest = asset['digest']
+    if digest&.start_with?('sha256:')
+      return digest.delete_prefix('sha256:')
+    end
+
+    temp_path = "/tmp/#{asset_name}"
+    unless system(['curl', '-o', temp_path, '-fL', asset.fetch('browser_download_url')].shelljoin)
+      raise "Failed to fetch asset: #{asset_name}"
     end
 
     result = IO.popen(['shasum', '-a', '256', temp_path], &:read)
-    sha256 = result.sub!(/ +#{temp_path}\n\z/m, '')
+    sha256 = result.sub!(/ +#{Regexp.escape(temp_path)}\n\z/m, '')
     raise "Failed to fetch sha256 from: #{result}" if sha256.nil?
 
     sha256
   ensure
-    FileUtils.rm_f(temp_path)
+    FileUtils.rm_f(temp_path) unless temp_path.nil?
   end
 
   private
 
-  def fetch_latest_version
-    response = Net::HTTP.start('github.com', 443, use_ssl: true) do |http|
-      http.get("/#{@full_name}/releases/latest")
-    end
-    release_page = response['location']
-    version = release_page.sub!(%r{\Ahttps://github.com/#{@full_name}/releases/tag/v}, '')
+  def latest_release
+    @latest_release ||= begin
+      response = Net::HTTP.start('api.github.com', 443, use_ssl: true) do |http|
+        http.get("/repos/#{@full_name}/releases/latest")
+      end
 
-    if version.nil?
-      require 'pp'
-      pp response.to_hash
-      raise 'GitHub responded unexpectedly!'
-    end
+      unless response.is_a?(Net::HTTPSuccess)
+        require 'pp'
+        pp response.to_hash
+        raise 'GitHub responded unexpectedly!'
+      end
 
-    version
+      JSON.parse(response.body)
+    end
   end
 end
 
 repo = GitHubRepository.new('itamae-kitchen/mitamae')
 version = repo.latest_version
-x86_64_linux_shasum = repo.latest_sha256_for('mitamae-x86_64-linux.tar.gz')
-aarch64_linux_shasum = repo.latest_sha256_for('mitamae-aarch64-linux.tar.gz')
-x86_64_darwin_shasum = repo.latest_sha256_for('mitamae-x86_64-darwin.tar.gz')
-aarch64_darwin_shasum = repo.latest_sha256_for('mitamae-aarch64-darwin.tar.gz')
+x86_64_linux_shasum = repo.latest_sha256_for('mitamae-x86_64-linux')
+aarch64_linux_shasum = repo.latest_sha256_for('mitamae-aarch64-linux')
+x86_64_darwin_shasum = repo.latest_sha256_for('mitamae-x86_64-darwin')
+aarch64_darwin_shasum = repo.latest_sha256_for('mitamae-aarch64-darwin')
 
 setup_file = "#{__dir__}/bootstrap-mitamae"
 source = File.read(setup_file)
